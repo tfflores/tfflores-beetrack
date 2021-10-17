@@ -14,7 +14,10 @@ Clonar el repositorio -> Correr el comando <code>bundle install</code> -> Correr
 Proyecto realizado en Ruby on Rails. Se usó además la gema react-rails, y los paquetes leaflet y react-leaflet.
 Se cuenta con un mapa, extraído de OpenStreetMap, al cual se le pueden añadir Waypoints. 
 Cada Waypoint representa un vehículo. Un vehículo tiene nombre, que constituye su identificación, y coordenadas,
-expresadas como latitud y longitud. Al mandar los datos del form, el programa verificará si existe un vehículo
+expresadas como latitud y longitud. El nombre del vehículo se muestra como la etiqueta al costado derecho de cada marcador.
+Al hacerle click a un marcador, se muestran sus coordenadas de latitud y longitud.
+
+Al mandar los datos del form, el programa verificará si existe un vehículo
 con el nombre indicado. Si existe, actualiza sus coordenadas y se refleja eso en el mapa ya que cambia su marcador
 asociado. Si el vehículo no existe, se crea uno nuevo con ese nombre añadiéndose un waypoint adicional al mapa.
 Esto sucede sin que se tenga que refrescar la página. Se tomó como supuesto que no existía persistencia de datos a largo plazo, por
