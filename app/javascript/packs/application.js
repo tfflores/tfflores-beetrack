@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks"
 import "channels"
 
 Rails.start()
-//Turbolinks.start()
+Turbolinks.start()
 // Support component names relative to this directory:
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");

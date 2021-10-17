@@ -1,6 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet'
 import React, { useState } from 'react'
-import './map.css';
 
 const Leaflet= () => { 
     const COORD_STGO = [-33.44285, -70.65386]
