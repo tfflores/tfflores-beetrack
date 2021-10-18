@@ -1,20 +1,28 @@
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet'
 import React, { useState } from 'react'
 
+// Componente usado para mostrar el mapa de Leaflet y el form de los waypoints. 
+// Se incluyen comentarios para explicar lo que hace cada funcion.
 const Leaflet= () => { 
     const COORD_STGO = [-33.44285, -70.65386]
+
+    // Centra el mapa en la Region Metropolitana
     const centering = (waypoints) => {
       if (waypoints.length === 0){
         return COORD_STGO
       }
       return waypoints[waypoints.length - 1].coord
     }
+
+    // State. Guarda un array con los objetos de los vehiculos registrados, y ademas guarda los valores temporales de los inputs
     const [vehicles, setVehicle] = useState(
         {
             items: [],
             tempLat: "", tempLong: "", tempName: ""
         }
         );
+
+    // Logica principal de actualizacion de estado. Realiza validaciones y procede a actualizar o crear waypoints si estas se cumplen.
     const updateVehicle = (name, itemAttributes) => {
         if (vehicles.tempName.length === 0 || vehicles.tempLat.toString().length === 0 || vehicles.tempLong.toString().length === 0){
           alert("Por favor complete todos los campos")
@@ -44,11 +52,15 @@ const Leaflet= () => {
              });
         }
     }
+
+    // Llama a la funcion que actualiza el estado si el usuario envia el form
     const handleSubmit = (event) => {
         event.preventDefault()
+        // En el segundo parametro se puede observar la estructura de un objeto de tipo vehiculo
         updateVehicle(vehicles.tempName, {name: vehicles.tempName, coord: [vehicles.tempLat, vehicles.tempLong]})
     }
 
+    // Procesa cambios en cualquiera de los inputs del form
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         if (value !== null) {       

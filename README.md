@@ -4,10 +4,26 @@
 
 ### Link a Heroku: https://tfflores-beetrack.herokuapp.com/
 
-
 ### Setup
 
 Clonar el repositorio -> Correr el comando <code>bundle install</code> -> Correr <code>rails s</code> -> Enjoy!
+
+El proyecto está hecho en: 
+npm 6.14.15, yarn 1.22.17, rails 6.1.4.1, ruby 2.7.0p0
+
+
+### Revisión
+
+Los archivos principales de este trabajo son:
+
+<code>app/assets/stylesheets/style.css</code>
+
+<code>app/assets/javascript/components/Leaflet.js</code>
+
+<code>app/views/pages/index.html.erb</code>
+
+No es necesario revisar modelos o controladores porque la lógica es principalmente de frontend (React).
+
 
 ### Detalles
 
